@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenStreetMap with Leaflet</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="zKarttaCSS.css">
+    <style>
+        #map {
+            height: 500px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h2>My OpenStreetMap</h2>
+    <div id="map"></div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        // Initialize the map and set its view
+        var map = L.map('map').setView([59.956, 23.6577], 8); // [Latitude, Longitude], Zoom Level
+
+        // Add the OpenStreetMap tile layer
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; OpenStreetMap contributors'
+        }).addTo(map);
+
+        L.marker([59.956, 23.6577]).addTo(map)
+            .bindPopup("Centered here!")
+            .openPopup();
+
+        // Function to handle marker clicks (except Helsinki)
+        function harborInfo(name) {
+            alert("You clicked on " + name);
+        }
+
+        // Function to change the background color when clicking Helsinki
+        function changeBackgroundColor() {
+            document.body.style.backgroundColor = "lightblue"; // Change to any color you like
+        }
+
+
+        // Add a marker
+        var maarianhamina = L.marker([60.1006, 19.9511]).addTo(map)
+            .bindPopup("Maarianhamina")
+            .on('click', function() { harborInfo("Maarianhamina"); });
+
+        var eckero = L.marker([60.2164, 19.6121]).addTo(map)
+            .bindPopup("Eckerö")
+            .on('click', function() { harborInfo("Eckerö"); });
+
+        var naantali = L.marker([60.4671, 22.0246]).addTo(map)
+            .bindPopup("Naantali")
+            .on('click', function() { harborInfo("Naantali"); });
+
+        var turku = L.marker([60.4352, 22.2266]).addTo(map)
+            .bindPopup("Turku")
+            .on('click', function() { harborInfo("Turku"); });
+
+        var hanko = L.marker([59.8235, 22.9682]).addTo(map)
+            .bindPopup("Hanko")
+            .on('click', function() { harborInfo("Hanko"); });
+
+        var helsinki = L.marker([60.1695, 24.9499]).addTo(map)
+            .bindPopup("Helsinki")
+            .on('click', function () { harborInfo("Helsinki"); changeBackgroundColor(); });
+
+        var kilpilahti = L.marker([60.3364, 25.4712]).addTo(map)
+            .bindPopup("Kilpilahti")
+            .on('click', function() { harborInfo("Kilpilahti"); });
+
+        var haminaKotka = L.marker([60.4649, 26.9456]).addTo(map)
+            .bindPopup("Hamina-Kotka")
+            .on('click', function() { harborInfo("Hamina-Kotka"); });
+    </script>
+</body>
+</html>
