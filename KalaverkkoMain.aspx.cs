@@ -17,8 +17,6 @@ namespace Kalaverkko
         protected string alongitude;
         protected string alatitude;
 
-        int testnumber;
-
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -59,6 +57,11 @@ namespace Kalaverkko
 
             ddlAlus.Items.Clear();
 
+            //Response.Write("<br>");
+            //Server.Execute("Datafile.aspx");
+            //Response.Write("<br>");
+            //Response.Write("Hello");
+
             // You can also execute other logic here, like database operations
             switch (selectedPort)
             {
@@ -93,7 +96,7 @@ namespace Kalaverkko
                     ddlAlus.Items.Add(new ListItem("M/S Viking XPRS", "M/S Viking XPRS"));
                     ddlAlus.Items.Add(new ListItem("M/S Star", "M/S Star"));
                     break;
-                case "Kilpilahti":
+                case "Kilpilahti":  
                     ddlAlus.Items.Add(new ListItem("M/S Öljypohatta", "M/S Öljypohatta"));
                     ddlAlus.Items.Add(new ListItem("M/S Transfennica", "M/S Transfennica"));
                     break;
@@ -171,6 +174,7 @@ namespace Kalaverkko
             // Return next port based on the ship
             return "Example Next Port";
         }
+
 
     }
 }

@@ -3,6 +3,7 @@
 
 <!DOCTYPE html>
             <!-- https://miro.com/app/board/uXjVIeA5MfQ=/ -->
+
 <html lang="fi" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <link rel="stylesheet" href="StyleSheet1.css"/>
@@ -180,7 +181,5 @@
             </div>
         </div>
         </form>
-        </div>
-
     </body>
         </html>

@@ -80,12 +80,29 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AddFromOwnPage.aspx" />
+    <Content Include="Datafile.aspx" />
     <Content Include="Global.asax" />
     <Content Include="KalaverkkoMain.aspx" />
+    <Content Include="TestiJuttu.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddFromOwnPage.aspx.cs">
+      <DependentUpon>AddFromOwnPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddFromOwnPage.aspx.designer.cs">
+      <DependentUpon>AddFromOwnPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Datafile.aspx.cs">
+      <DependentUpon>Datafile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Datafile.aspx.designer.cs">
+      <DependentUpon>Datafile.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -97,6 +114,13 @@
       <DependentUpon>KalaverkkoMain.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestiJuttu.aspx.cs">
+      <DependentUpon>TestiJuttu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TestiJuttu.aspx.designer.cs">
+      <DependentUpon>TestiJuttu.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
